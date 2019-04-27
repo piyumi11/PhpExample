@@ -63,4 +63,6 @@ $route['stud/delete/(\d+)'] = 'Stud_controller/delete_student/$1';
 // file upload
 $route['upload'] = 'Upload';
 
+//exam
+$route['exam/goto_exam/(\d+)'] = 'exam/Exam_controller/goto_exam_view/$1';
 $route['test'] = 'Test';

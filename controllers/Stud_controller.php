@@ -4,25 +4,30 @@
       function __construct() {
          parent::__construct();
          $this->load->helper('url');
+         $this->load->helper('form');
          $this->load->database();
       }
 
       public function index() {
+
          $query = $this->db->get("stud");
          $data['records'] = $query->result();
+         $data['page_title'] = "Students List : All";
 
-         $this->load->helper('url');
-         $this->load->view('Stud_view',$data);
+         $this->load->view('common/header', $data);
+         $this->load->view('Stud_view', $data);
       }
 
       public function add_student_view() {
-         $this->load->helper('form');
+
+         $data['page_title'] = "Add Students";
+
+         $this->load->view('common/header', $data);
          $this->load->view('Stud_add');
       }
 
       public function add_student() {
-        $this->load->helper('form');
-        $this->load->helper('url');
+
          $this->load->model('Stud_Model');
 
          $data = array(
@@ -33,22 +38,26 @@
 
          $query = $this->db->get("stud");
          $data['records'] = $query->result();
+         $data['page_title'] = "Student list : All";
+
+         $this->load->view('common/header', $data);
          $this->load->view('Stud_view',$data);
       }
 
       public function update_student_view() {
-         $this->load->helper('form');
-         $this->load->helper('url');
+
          $roll_no = $this->uri->segment('3');
          $query = $this->db->get_where("stud",array("roll_no"=>$roll_no));
          $data['records'] = $query->result();
          $data['old_roll_no'] = $roll_no;
+         $data['page_title'] = "Edit student";
+
+         $this->load->view('common/header', $data);
          $this->load->view('Stud_edit',$data);
       }
 
       public function update_student(){
-        $this->load->helper('form');
-        $this->load->helper('url');
+
          $this->load->model('Stud_Model');
 
          $data = array(
@@ -61,18 +70,23 @@
 
          $query = $this->db->get("stud");
          $data['records'] = $query->result();
+         $data['page_title'] = "Student list : All";
+
+         $this->load->view('common/header', $data);
          $this->load->view('Stud_view.php',$data);
       }
 
       public function delete_student() {
-        $this->load->helper('form');
-        $this->load->helper('url');
+
          $this->load->model('Stud_Model');
          $roll_no = $this->uri->segment('3');
          $this->Stud_Model->delete($roll_no);
 
          $query = $this->db->get("stud");
          $data['records'] = $query->result();
+         $data['page_title'] = "Student list : All";
+
+         $this->load->view('common/header', $data);
          $this->load->view('Stud_view',$data);
       }
    }

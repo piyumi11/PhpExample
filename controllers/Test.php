@@ -1,3 +1,4 @@
+
 <?php
 
    class Test extends CI_Controller {
@@ -8,7 +9,7 @@
       }
 
       public function index() {
-         $this->load->view('Test');
+         $this->load->view('Init_exam');
       }
    }
 ?>
