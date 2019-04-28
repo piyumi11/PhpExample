@@ -65,4 +65,7 @@ $route['upload'] = 'Upload';
 
 //exam
 $route['exam/goto_exam/(\d+)'] = 'exam/Exam_controller/goto_exam_view/$1';
+//Subjects
+$route['subject/subjects/(\d+)'] = 'subject/Sub_controller/subjects_view/$1';
+
 $route['test'] = 'Test';

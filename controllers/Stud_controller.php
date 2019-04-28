@@ -12,7 +12,7 @@
 
          $query = $this->db->get("stud");
          $data['records'] = $query->result();
-         $data['page_title'] = "Students List : All";
+         $data['page_title'] = "All students list";
 
          $this->load->view('common/header', $data);
          $this->load->view('Stud_view', $data);
@@ -38,7 +38,7 @@
 
          $query = $this->db->get("stud");
          $data['records'] = $query->result();
-         $data['page_title'] = "Student list : All";
+         $data['page_title'] = "All students list";
 
          $this->load->view('common/header', $data);
          $this->load->view('Stud_view',$data);
@@ -70,7 +70,7 @@
 
          $query = $this->db->get("stud");
          $data['records'] = $query->result();
-         $data['page_title'] = "Student list : All";
+         $data['page_title'] = "All student list";
 
          $this->load->view('common/header', $data);
          $this->load->view('Stud_view.php',$data);
@@ -84,7 +84,7 @@
 
          $query = $this->db->get("stud");
          $data['records'] = $query->result();
-         $data['page_title'] = "Student list : All";
+         $data['page_title'] = "All student list";
 
          $this->load->view('common/header', $data);
          $this->load->view('Stud_view',$data);
